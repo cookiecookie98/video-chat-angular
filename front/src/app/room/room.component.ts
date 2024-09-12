@@ -122,4 +122,8 @@ export class RoomComponent implements OnInit {
     (event.target as HTMLVideoElement).play();
   }
 
+  onVoiceControl(){}
+
+  onCameraControl(){}
+
 }

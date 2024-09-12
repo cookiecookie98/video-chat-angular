@@ -30,8 +30,7 @@
   </head>
   <body>
     <div class="app-container">
-      <button class="mode-switch">
-        <!-- sun icon -->
+      <!-- <button class="mode-switch">
         <svg
           class="sun"
           fill="none"
@@ -48,9 +47,7 @@
             d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
           />
         </svg>
-        <!-- sun icon -->
 
-        <!-- moon icon -->
         <svg
           class="moon"
           fill="none"
@@ -64,8 +61,7 @@
           <defs />
           <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
         </svg>
-        <!-- moon icon -->
-      </button>
+      </button> -->
       <div class="left-side">
         <div class="navigation">
           <a href="#" class="nav-link icon">
@@ -215,7 +211,10 @@
               <button class="btn-mute"></button>
               <button class="btn-camera"></button>
             </div>
-            <a href="#" class="name-tag">Andy Will</a>
+            <a *ngIf="video.userId !== currentUserId; else currentUserVideoLabel" class="name-tag">{{ video.userId }}</a>
+            <ng-template #currentUserVideoLabel>
+              <a class="name-tag">You</a>
+            </ng-template>
             <video [srcObject]="video.srcObject"
             (loadedmetadata)="onLoadedMetadata($event)"
             [muted]="video.muted"></video>
@@ -226,7 +225,7 @@
           <button class="video-action-button mic"></button>
           <button class="video-action-button camera"></button>
           <button class="video-action-button maximize"></button>
-          <button class="video-action-button endcall">Leave</button>
+          <button class="video-action-button endcall">Rời khỏi</button>
           <button class="video-action-button magnifier">
             <!-- ZoomIn icon -->
             <svg
@@ -291,7 +290,7 @@
         </button>
         <div class="chat-container">
           <div class="chat-header">
-            <button class="chat-header-button">Live Chat</button>
+            <button class="chat-header-button">Trò chuyện</button>
           </div>
           <div class="chat-area">
             <!-- Message 1 -->
@@ -303,12 +302,12 @@
                 />
               </div>
               <div class="message-content">
-                <p class="name">Ryan Patrick</p>
-                <div class="message">Helloo team!😍</div>
+                <p class="name">Tuấn ngu</p>
+                <div class="message">Chào bọn mày tao là Tuấn Ngu!😍 Tao rất ngu nên đừng dí tao</div>
               </div>
             </div>
             <!-- Message 2 -->
-            <div class="message-wrapper">
+            <!-- <div class="message-wrapper">
               <div class="profile-picture">
                 <img
                   src="https://images.unsplash.com/photo-1566821582776-92b13ab46bb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
@@ -321,9 +320,9 @@
                   Hello! Can you hear me?🤯 <a class="mention">@ryanpatrick</a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Message 3 -->
-            <div class="message-wrapper">
+            <!-- <div class="message-wrapper">
               <div class="profile-picture">
                 <img
                   src="https://images.unsplash.com/photo-1600207438283-a5de6d9df13e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
@@ -334,9 +333,9 @@
                 <p class="name">Jessica Bell</p>
                 <div class="message">Hi team! Let's get started it.</div>
               </div>
-            </div>
+            </div> -->
             <!-- Message 4 -->
-            <div class="message-wrapper reverse">
+            <!-- <div class="message-wrapper reverse">
               <div class="profile-picture">
                 <img
                   src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
@@ -347,9 +346,9 @@
                 <p class="name">Emmy Lou</p>
                 <div class="message">Good morning!🌈</div>
               </div>
-            </div>
+            </div> -->
             <!-- Message 5 -->
-            <div class="message-wrapper">
+            <!-- <div class="message-wrapper">
               <div class="profile-picture">
                 <img
                   src="https://images.unsplash.com/photo-1576110397661-64a019d88a98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"
@@ -386,9 +385,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Message 6 -->
-            <div class="message-wrapper">
+            <!-- <div class="message-wrapper">
               <div class="profile-picture">
                 <img
                   src="https://images.unsplash.com/photo-1581824283135-0666cf353f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1276&q=80"
@@ -402,10 +401,10 @@
                   I downloaded the file <a class="mention">@timrussel</a>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- Message 7 -->
-            <div class="message-wrapper reverse">
+            <!-- <div class="message-wrapper reverse">
               <div class="profile-picture">
                 <img
                   src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
@@ -416,13 +415,13 @@
                 <p class="name">Emmy Lou</p>
                 <div class="message">Woooww! Awesome❤️</div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="chat-typing-area-wrapper">
             <div class="chat-typing-area">
               <input
                 type="text"
-                placeholder="Type your message..."
+                placeholder="Trò chuyện tại đây..."
                 class="chat-input"
               />
               <button class="send-button">
@@ -446,34 +445,34 @@
         </div>
         <div class="participants">
           <!-- Participant pic 1 -->
-          <div class="participant profile-picture">
+          <!-- <div class="participant profile-picture">
             <img
               src="https://images.unsplash.com/photo-1576110397661-64a019d88a98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"
               alt=""
             />
-          </div>
+          </div> -->
           <!-- Participant pic 2 -->
-          <div class="participant profile-picture">
+          <!-- <div class="participant profile-picture">
             <img
               src="https://images.unsplash.com/photo-1566821582776-92b13ab46bb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
               alt=""
             />
-          </div>
+          </div> -->
           <!-- Participant pic 3 -->
-          <div class="participant profile-picture">
+          <!-- <div class="participant profile-picture">
             <img
               src="https://images.unsplash.com/photo-1600207438283-a5de6d9df13e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
               alt=""
             />
-          </div>
+          </div> -->
           <!-- Participant pic 4 -->
-          <div class="participant profile-picture">
+          <!-- <div class="participant profile-picture">
             <img
               src="https://images.unsplash.com/photo-1581824283135-0666cf353f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1276&q=80"
               alt=""
             />
-          </div>
-          <div class="participant-more">2+</div>
+          </div> -->
+          <div><span class="text-blue">4 (Set cứng)</span> Người tham gia</div>
         </div>
       </div>
       <button class="expand-btn">

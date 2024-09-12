@@ -409,6 +409,8 @@ body.dark .btn-close-right {
 }
 .participants {
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--button-bg);
   box-shadow: var(--navigation-box-shadow);
   margin-top: 16px;
@@ -567,4 +569,8 @@ body.dark .btn-close-right {
     width: 50%;
     height: 33.3%;
   }
+}
+
+.text-blue {
+  color: blue;
 }
